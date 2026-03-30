@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bryonpav</title>
+  <style>
+    :root {
+      --bg: #f3efe8;
+      --text: #111111;
+      --shadow: 0 10px 24px rgba(0,0,0,0.10);
+      --shadow-hover: 0 14px 32px rgba(0,0,0,0.16);
+      --radius: 22px;
+      --border: 2px solid #000000;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    .site-header {
+      margin-bottom: 26px;
+    }
+
+    .site-title {
+      margin: 0;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 158px;
+      padding: 18px;
+      border-radius: var(--radius);
+      border: var(--border);
+      color: var(--text);
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      transition: transform 140ms ease, box-shadow 140ms ease;
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    .tile:hover,
+    .tile:focus-visible {
+      transform: scale(1.035);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .tile:focus-visible {
+      outline: 3px solid rgba(0,0,0,0.20);
+      outline-offset: 2px;
+    }
+
+    .tile-1 { background: #e6a9c3; }
+    .tile-2 { background: #a9d1f3; }
+    .tile-3 { background: #b8e3b1; }
+    .tile-4 { background: #f3c38e; }
+    .tile-5 { background: #cbbaf3; }
+    .tile-6 { background: #f2dd76; }
+    .tile-7 { background: #95ddd0; }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 22px 16px 28px;
+      }
+
+      .tile-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .tile {
+        min-height: 132px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <h1 class="site-title">bryonpav</h1>
+    </header>
+
+    <section class="tile-grid" aria-label="Project links">
+      <a class="tile tile-1" href="https://bryonpav.github.io/timeline/">Timeline</a>
+      <a class="tile tile-2" href="https://bryonpav.github.io/julia-sets/">Julia Sets</a>
+      <a class="tile tile-3" href="https://bryonpav.github.io/electron-orbitals/">Electron Orbitals</a>
+      <a class="tile tile-4" href="https://bryonpav.github.io/red-flags/">Red Flags</a>
+      <a class="tile tile-5" href="https://www.desmos.com/calculator/e363185350">Kissing Circles</a>
+      <a class="tile tile-6" href="https://www.desmos.com/calculator/7toxofrh6s">Z Score Probabilities</a>
+      <a class="tile tile-7" href="https://www.desmos.com/calculator/a82afbe8a8">Cross's Theorem</a>
+    </section>
+  </main>
+</body>
+</html>
