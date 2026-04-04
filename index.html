@@ -33,6 +33,14 @@
       margin-bottom: 26px;
     }
 
+    .site-subtitle {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      line-height: 1.2;
+      color: #222222;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
     .site-title {
       margin: 0;
       font-family: "Comic Sans MS", "Comic Sans", cursive;
@@ -56,7 +64,6 @@
       padding: 18px;
       border-radius: var(--radius);
       border: var(--border);
-      color: var(--text);
       text-decoration: none;
       text-align: center;
       font-size: 1.15rem;
@@ -65,6 +72,19 @@
       transition: transform 140ms ease, box-shadow 140ms ease;
       transform-origin: center center;
       will-change: transform;
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .tile::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.14);
+      z-index: 1;
     }
 
     .tile:hover,
@@ -78,13 +98,59 @@
       outline-offset: 2px;
     }
 
-    .tile-1 { background: #e6a9c3; }
-    .tile-2 { background: #a9d1f3; }
-    .tile-3 { background: #b8e3b1; }
-    .tile-4 { background: #f3c38e; }
-    .tile-5 { background: #cbbaf3; }
-    .tile-6 { background: #f2dd76; }
-    .tile-7 { background: #95ddd0; }
+    .tile span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .text-black {
+      color: #000000;
+      text-shadow:
+        -2px -2px 0 #fff,
+         2px -2px 0 #fff,
+        -2px  2px 0 #fff,
+         2px  2px 0 #fff,
+         0px -2px 0 #fff,
+         0px  2px 0 #fff,
+        -2px  0px 0 #fff,
+         2px  0px 0 #fff,
+         0 0 6px rgba(255,255,255,0.35);
+    }
+
+    .text-white-outline {
+      color: #ffffff;
+      text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         0px -2px 0 #000,
+         0px  2px 0 #000,
+        -2px  0px 0 #000,
+         2px  0px 0 #000,
+         0 0 6px rgba(0,0,0,0.4);
+    }
+
+    .text-white {
+      color: #ffffff;
+      text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         0px -2px 0 #000,
+         0px  2px 0 #000,
+        -2px  0px 0 #000,
+         2px  0px 0 #000,
+         0 0 6px rgba(0,0,0,0.4);
+    }
+
+    .tile-1 { background-image: url('https://raw.githubusercontent.com/bryonpav/home/refs/heads/main/particle-life.webp'); background-color: #f2b8c6; }
+    .tile-2 { background-image: url('https://raw.githubusercontent.com/bryonpav/home/refs/heads/main/electron-orbitals.webp'); background-color: #b8e3b1; }
+    .tile-3 { background-image: url('https://raw.githubusercontent.com/bryonpav/home/refs/heads/main/julia-sets.webp'); background-color: #a9d1f3; }
+    .tile-4 { background-image: url('https://raw.githubusercontent.com/bryonpav/home/refs/heads/main/kissing-circles.webp'); background-color: #cbbaf3; }
+    .tile-5 { background-image: url('https://raw.githubusercontent.com/bryonpav/home/refs/heads/main/zscore-probabilities.webp'); background-color: #f2dd76; }
+    .tile-6 { background-image: url('https://raw.githubusercontent.com/bryonpav/home/refs/heads/main/crosss-theorem.webp'); background-color: #95ddd0; }
 
     @media (max-width: 760px) {
       .page {
@@ -106,14 +172,16 @@
   <main class="page">
     <header class="site-header">
       <h1 class="site-title">bryonpav</h1>
+      <div class="site-subtitle">Fun things by Bryon Pavlacka</div>
     </header>
 
     <section class="tile-grid" aria-label="Project links">
-      <a class="tile tile-2" href="https://bryonpav.github.io/julia-sets/">Julia Sets</a>
-      <a class="tile tile-3" href="https://bryonpav.github.io/electron-orbitals/">Electron Orbitals</a>
-      <a class="tile tile-5" href="https://www.desmos.com/calculator/e363185350">Kissing Circles</a>
-      <a class="tile tile-6" href="https://www.desmos.com/calculator/7toxofrh6s">Z Score Probabilities</a>
-      <a class="tile tile-7" href="https://www.desmos.com/calculator/a82afbe8a8">Cross's Theorem</a>
+      <a class="tile tile-1 text-white-outline" href="https://bryonpav.github.io/particle-life/"><span>Particle Life</span></a>
+      <a class="tile tile-2 text-black" href="https://bryonpav.github.io/electron-orbitals/"><span>Electron Orbitals</span></a>
+      <a class="tile tile-3 text-white" href="https://bryonpav.github.io/julia-sets/"><span>Julia Sets</span></a>
+      <a class="tile tile-4 text-black" href="https://www.desmos.com/calculator/e363185350"><span>Kissing Circles</span></a>
+      <a class="tile tile-5 text-black" href="https://www.desmos.com/calculator/7toxofrh6s"><span>Z Score Probabilities</span></a>
+      <a class="tile tile-6 text-black" href="https://www.desmos.com/calculator/a82afbe8a8"><span>Cross's Theorem</span></a>
     </section>
   </main>
 </body>
